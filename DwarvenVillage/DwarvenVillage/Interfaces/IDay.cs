@@ -9,7 +9,7 @@ namespace DwarvenVillage.Interfaces
 {
     public interface IDay
     {
-        void BornDwarves(IList<Dwarf> villageDwarves);
+        IList<Dwarf> BornDwarves(IList<Dwarf> villageDwarves);
         IList<Dwarf> Mine(IList<Dwarf> mineDwarves);
         IList<Dwarf> SellOres(IList<Dwarf> shopDwarves);
         IList<Dwarf> BuyFood(IList<Dwarf> foodDwarves);

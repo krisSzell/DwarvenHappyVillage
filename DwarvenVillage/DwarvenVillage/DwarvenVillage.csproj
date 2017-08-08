@@ -42,14 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day.cs" />
+    <Compile Include="Factories\DwarfFactory.cs" />
     <Compile Include="Interfaces\IDay.cs" />
+    <Compile Include="Interfaces\IDwarfFactory.cs" />
     <Compile Include="Interfaces\IVillageSimulator.cs" />
     <Compile Include="Models\Dwarf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VillageSimulator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
