@@ -16,5 +16,9 @@ namespace DwarvenVillage.Models
             set { _id = value; }
         }
 
+        public Dwarf(int id)
+        {
+            _id = id;
+        }
     }
 }

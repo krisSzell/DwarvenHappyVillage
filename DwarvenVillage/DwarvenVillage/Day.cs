@@ -10,7 +10,31 @@ namespace DwarvenVillage
 {
     public class Day : IDay
     {
+        private readonly IDwarfFactory _dwarfFactory;
+        private int _dayNumber;
+
+        private Day()
+        {
+
+        }
+
+        public Day(IDwarfFactory dwarfFactory, int dayNumber)
+        {
+            _dwarfFactory = dwarfFactory;
+            _dayNumber = dayNumber;
+        }
+
         public IList<Dwarf> BornDwarves(IList<Dwarf> villageDwarves)
+        {
+            if (_dayNumber == 1)
+            {
+                return _dwarfFactory.Create10();
+            }
+
+            return new List<Dwarf>() { _dwarfFactory.CreateSingle() };
+        }
+
+        public IList<Dwarf> Mine(IList<Dwarf> mineDwarves)
         {
             throw new NotImplementedException();
         }
@@ -21,11 +45,6 @@ namespace DwarvenVillage
         }
 
         public IList<Dwarf> Feed(IList<Dwarf> hungryDwarves)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<Dwarf> Mine(IList<Dwarf> mineDwarves)
         {
             throw new NotImplementedException();
         }

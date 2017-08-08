@@ -3,13 +3,14 @@ using DwarvenVillage.Models;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DwarvenVillage.Tests
 {
     public class DwarfFactoryTests
     {
         [Test]
-        public void ShouldCreateSetOf10Dwarves()
+        public void ShouldCreateSetOf10DwarvesWithUniqueIds()
         {
             // given
             var factory = new DwarfFactory();
@@ -20,6 +21,7 @@ namespace DwarvenVillage.Tests
 
             // then
             Assert.AreEqual(expected, result.Count);
+            Assert.IsTrue(result.Distinct().Count() == result.Count);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DwarvenVillage.Interfaces;
+﻿using DwarvenVillage.Factories;
+using DwarvenVillage.Interfaces;
 using DwarvenVillage.Models;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,12 @@ namespace DwarvenVillage
     {
         private IDay _day;
         private IList<Dwarf> _dwarves;
-
-        public VillageSimulator()
-        {
-            _dwarves = new List<Dwarf>();
-        }
+        private int _dayNumber;
 
         public void InitializeSimulation()
         {
-            _day = new Day();
+            _dwarves = new List<Dwarf>();
+            _day = new Day(new DwarfFactory(), _dayNumber);
         }
 
         public void StartSimulation()

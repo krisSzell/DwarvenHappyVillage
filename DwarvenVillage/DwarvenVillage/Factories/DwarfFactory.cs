@@ -10,13 +10,15 @@ namespace DwarvenVillage.Factories
 {
     public class DwarfFactory : IDwarfFactory
     {
+        private static int _id = 0;
+
         public IList<Dwarf> Create10()
         {
             IList<Dwarf> dwarves = new List<Dwarf>();
 
             for (int i = 0; i < 10; i++)
             {
-                dwarves.Add(new Dwarf());
+                dwarves.Add(new Dwarf(_id++));
             }
 
             return dwarves;
@@ -24,7 +26,7 @@ namespace DwarvenVillage.Factories
 
         public Dwarf CreateSingle()
         {
-            throw new NotImplementedException();
+            return new Dwarf(_id);
         }
     }
 }
