@@ -18,6 +18,7 @@ namespace DwarvenVillage
         public void InitializeSimulation()
         {
             _dwarves = new List<Dwarf>();
+            _dayNumber = 1;
             _day = new Day(new DwarfFactory(), _dayNumber);
         }
 

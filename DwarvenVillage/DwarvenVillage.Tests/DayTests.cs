@@ -36,5 +36,18 @@ namespace DwarvenVillage.Tests
             // then
             Assert.AreEqual(expected.Count, result.Count);
         }
+
+        [Test]
+        public void ShouldReturnListOf1Or0DwarvesOnDayOtherThanFirst()
+        {
+            // given
+            var factoryMock = new Mock<IDwarfFactory>();
+            factoryMock.Setup(f => f.CreateSingle()).Returns(new Dwarf(0));
+            var day = new Day(factoryMock.Object, 2);
+            // when
+            var result = day.BornDwarves(new List<Dwarf>());
+            // then
+            Assert.IsTrue(result.Count == 1 || result.Count == 0);
+        }
     }
 }
