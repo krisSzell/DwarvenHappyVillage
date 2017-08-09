@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Day.cs" />
     <Compile Include="Factories\DwarfFactory.cs" />
+    <Compile Include="Generators\DwarfTypeGenerator.cs" />
+    <Compile Include="Generators\IRandom.cs" />
     <Compile Include="Interfaces\IDay.cs" />
     <Compile Include="Interfaces\IDwarfFactory.cs" />
     <Compile Include="Interfaces\IVillageSimulator.cs" />

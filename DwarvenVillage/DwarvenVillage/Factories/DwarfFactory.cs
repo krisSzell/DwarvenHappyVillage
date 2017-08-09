@@ -5,12 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DwarvenVillage.Models;
+using DwarvenVillage.Generators;
 
 namespace DwarvenVillage.Factories
 {
     public class DwarfFactory : IDwarfFactory
     {
         private static int _id = 0;
+        private IRandom _typeGenerator;
+
+        public DwarfFactory(IRandom typeGenerator)
+        {
+            _typeGenerator = typeGenerator;
+        }
 
         public IList<Dwarf> Create10()
         {
@@ -18,7 +25,7 @@ namespace DwarvenVillage.Factories
 
             for (int i = 0; i < 10; i++)
             {
-                dwarves.Add(new Dwarf(_id++));
+                dwarves.Add(CreateSingle());
             }
 
             return dwarves;
@@ -26,7 +33,13 @@ namespace DwarvenVillage.Factories
 
         public Dwarf CreateSingle()
         {
-            return new Dwarf(_id);
+            var dwarf = new Dwarf()
+            {
+                Id = _id++,
+                Type = (DwarfType)_typeGenerator.Generate()
+            };
+
+            return dwarf;
         }
     }
 }

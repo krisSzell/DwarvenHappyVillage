@@ -8,18 +8,19 @@ namespace DwarvenVillage.Models
 {
     public class Dwarf
     {
-        private int _id;
-        private DwarfType _type;
+        public int Id { get; set; }
+        public DwarfType Type { get; set; }
 
-        public int Id
+        public override bool Equals(object obj)
         {
-            get { return _id; }
-            set { _id = value; }
-        }
+            bool isEqual = false;
+            Dwarf dwarf = (Dwarf)obj;
+            if (dwarf.Id == this.Id && dwarf.Type == this.Type)
+            {
+                isEqual = true;
+            }
 
-        public Dwarf(int id)
-        {
-            _id = id;
+            return isEqual;
         }
     }
 }

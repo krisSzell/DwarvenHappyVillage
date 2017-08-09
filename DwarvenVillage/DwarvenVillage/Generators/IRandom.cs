@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DwarvenVillage.Models
+namespace DwarvenVillage.Generators
 {
-    public enum DwarfType
+    public interface IRandom
     {
-        Parent,
-        Saboteur,
-        Single,
-        LazyBastard
+        int Generate();
     }
 }

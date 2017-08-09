@@ -1,4 +1,5 @@
 ﻿using DwarvenVillage.Factories;
+using DwarvenVillage.Generators;
 using DwarvenVillage.Interfaces;
 using DwarvenVillage.Models;
 using System;
@@ -19,7 +20,7 @@ namespace DwarvenVillage
         {
             _dwarves = new List<Dwarf>();
             _dayNumber = 1;
-            _day = new Day(new DwarfFactory(), _dayNumber);
+            _day = new Day(new DwarfFactory(new DwarfTypeGenerator()), _dayNumber);
         }
 
         public void StartSimulation()

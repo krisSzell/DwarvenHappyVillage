@@ -19,7 +19,7 @@ namespace DwarvenVillage.Tests
 
             for (int i = 0; i < 10; i++)
             {
-                _tenDwarves.Add(new Dwarf(id++));
+                _tenDwarves.Add(new Dwarf() { Id = id });
             }
         }
 
@@ -42,7 +42,7 @@ namespace DwarvenVillage.Tests
         {
             // given
             var factoryMock = new Mock<IDwarfFactory>();
-            factoryMock.Setup(f => f.CreateSingle()).Returns(new Dwarf(0));
+            factoryMock.Setup(f => f.CreateSingle()).Returns(new Dwarf() { Id = 0 });
             var day = new Day(factoryMock.Object, 2);
             // when
             var result = day.BornDwarves(new List<Dwarf>());
