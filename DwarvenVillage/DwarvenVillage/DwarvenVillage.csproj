@@ -48,6 +48,7 @@
     <Compile Include="Interfaces\IDwarfFactory.cs" />
     <Compile Include="Interfaces\IVillageSimulator.cs" />
     <Compile Include="Models\Dwarf.cs" />
+    <Compile Include="Models\DwarfType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VillageSimulator.cs" />

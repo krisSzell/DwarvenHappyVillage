@@ -9,6 +9,7 @@ namespace DwarvenVillage.Models
     public class Dwarf
     {
         private int _id;
+        private DwarfType _type;
 
         public int Id
         {
