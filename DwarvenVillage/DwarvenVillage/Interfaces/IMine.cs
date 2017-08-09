@@ -9,6 +9,6 @@ namespace DwarvenVillage.Interfaces
 {
     public interface IMine
     {
-        IList<Dwarf> Work(IList<Dwarf> villageDwarves);
+        IList<IDwarf> Work(IList<IDwarf> villageDwarves);
     }
 }

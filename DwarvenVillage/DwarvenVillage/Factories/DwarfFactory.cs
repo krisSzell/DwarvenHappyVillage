@@ -19,9 +19,9 @@ namespace DwarvenVillage.Factories
             _typeGenerator = typeGenerator;
         }
 
-        public IList<Dwarf> Create10()
+        public IList<IDwarf> Create10()
         {
-            IList<Dwarf> dwarves = new List<Dwarf>();
+            IList<IDwarf> dwarves = new List<IDwarf>();
 
             for (int i = 0; i < 10; i++)
             {
@@ -31,7 +31,7 @@ namespace DwarvenVillage.Factories
             return dwarves;
         }
 
-        public Dwarf CreateSingle()
+        public IDwarf CreateSingle()
         {
             var dwarf = new Dwarf()
             {

@@ -24,32 +24,32 @@ namespace DwarvenVillage
             _dayNumber = dayNumber;
         }
 
-        public IList<Dwarf> BornDwarves(IList<Dwarf> villageDwarves)
+        public IList<IDwarf> BornDwarves(IList<IDwarf> villageDwarves)
         {
             if (_dayNumber == 1)
             {
                 return _dwarfFactory.Create10();
             }
 
-            return new List<Dwarf>() { _dwarfFactory.CreateSingle() };
+            return new List<IDwarf>() { _dwarfFactory.CreateSingle() };
         }
 
-        public IList<Dwarf> Mine(IList<Dwarf> mineDwarves, IMine mine)
+        public IList<IDwarf> Mine(IList<IDwarf> mineDwarves, IMine mine)
         {
             return mine.Work(mineDwarves);
         }
 
-        public IList<Dwarf> SellOres(IList<Dwarf> shopDwarves, IOreShop oreShop)
+        public IList<IDwarf> SellOres(IList<IDwarf> shopDwarves, IOreShop oreShop)
         {
             throw new NotImplementedException();
         }
 
-        public IList<Dwarf> BuyFood(IList<Dwarf> foodDwarves, IFoodStore foodStore)
+        public IList<IDwarf> BuyFood(IList<IDwarf> foodDwarves, IFoodStore foodStore)
         {
             throw new NotImplementedException();
         }
 
-        public IList<Dwarf> Feed(IList<Dwarf> hungryDwarves)
+        public IList<IDwarf> Feed(IList<IDwarf> hungryDwarves)
         {
             throw new NotImplementedException();
         }

@@ -47,6 +47,7 @@
     <Compile Include="Generators\DwarfTypeGenerator.cs" />
     <Compile Include="Generators\IRandom.cs" />
     <Compile Include="Interfaces\IDay.cs" />
+    <Compile Include="Interfaces\IDwarf.cs" />
     <Compile Include="Interfaces\IDwarfFactory.cs" />
     <Compile Include="Interfaces\IFoodStore.cs" />
     <Compile Include="Interfaces\IMine.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="VillageSimulator.cs" />
     <Compile Include="Interfaces\IShaft.cs" />
     <Compile Include="WorkUnits\Mine.cs" />
+    <Compile Include="WorkUnits\Shaft.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

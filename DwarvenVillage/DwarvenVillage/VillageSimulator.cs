@@ -14,14 +14,19 @@ namespace DwarvenVillage
     public class VillageSimulator : IVillageSimulator
     {
         private IDay _day;
-        private IList<Dwarf> _dwarves;
+        private IList<IDwarf> _dwarves;
         private int _dayNumber;
         private IMine _mine;
 
         public void InitializeSimulation()
         {
-            _dwarves = new List<Dwarf>();
-            _mine = new Mine();
+            var shafts = new List<IShaft>()
+            {
+                new Shaft(),
+                new Shaft()
+            };
+            _dwarves = new List<IDwarf>();
+            _mine = new Mine(shafts);
             _dayNumber = 1;
             _day = new Day(new DwarfFactory(new DwarfTypeGenerator()), _dayNumber);
         }

@@ -10,11 +10,21 @@ namespace DwarvenVillage.WorkUnits
 {
     public class Mine : IMine
     {
-        private readonly IEnumerable<IShaft> _shafts;
+        private IEnumerable<IShaft> _shafts;
 
-        public IList<Dwarf> Work(IList<Dwarf> villageDwarves)
+        public Mine(IEnumerable<IShaft> shafts)
         {
-            throw new NotImplementedException();
+            _shafts = shafts;
+        }
+
+        public IList<IDwarf> Work(IList<IDwarf> villageDwarves)
+        {
+            foreach (var shaft in _shafts)
+            {
+                villageDwarves = shaft.Dig(villageDwarves);
+            }
+
+            return villageDwarves;
         }
     }
 }

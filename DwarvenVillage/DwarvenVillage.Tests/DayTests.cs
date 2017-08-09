@@ -9,13 +9,13 @@ namespace DwarvenVillage.Tests
 {
     public class DayTests
     {
-        private IList<Dwarf> _tenDwarves;
+        private IList<IDwarf> _tenDwarves;
 
         [SetUp]
         public void Init()
         {
             int id = 0;
-            _tenDwarves = new List<Dwarf>();
+            _tenDwarves = new List<IDwarf>();
 
             for (int i = 0; i < 10; i++)
             {
@@ -32,7 +32,7 @@ namespace DwarvenVillage.Tests
             var day = new Day(factoryMock.Object, 1);
             var expected = _tenDwarves;
             // when
-            var result = day.BornDwarves(new List<Dwarf>());
+            var result = day.BornDwarves(new List<IDwarf>());
             // then
             Assert.AreEqual(expected.Count, result.Count);
         }
@@ -45,7 +45,7 @@ namespace DwarvenVillage.Tests
             factoryMock.Setup(f => f.CreateSingle()).Returns(new Dwarf() { Id = 0 });
             var day = new Day(factoryMock.Object, 2);
             // when
-            var result = day.BornDwarves(new List<Dwarf>());
+            var result = day.BornDwarves(new List<IDwarf>());
             // then
             Assert.IsTrue(result.Count == 1 || result.Count == 0);
         }
