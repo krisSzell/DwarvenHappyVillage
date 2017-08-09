@@ -17,6 +17,7 @@ namespace DwarvenVillage
         private IList<IDwarf> _dwarves;
         private int _dayNumber;
         private IMine _mine;
+        private IOreShop _oreShop;
 
         public void InitializeSimulation()
         {
@@ -27,6 +28,7 @@ namespace DwarvenVillage
             };
             _dwarves = new List<IDwarf>();
             _mine = new Mine(shafts);
+            _oreShop = new OreShop();
             _dayNumber = 1;
             _day = new Day(new DwarfFactory(new DwarfTypeGenerator()), _dayNumber);
         }

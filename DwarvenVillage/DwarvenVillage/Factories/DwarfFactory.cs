@@ -14,9 +14,9 @@ namespace DwarvenVillage.Factories
         private static int _id = 0;
         private IRandom _typeGenerator;
 
-        public DwarfFactory(IRandom typeGenerator)
+        public DwarfFactory(IRandom generator)
         {
-            _typeGenerator = typeGenerator;
+            _typeGenerator = generator;
         }
 
         public IList<IDwarf> Create10()
@@ -36,7 +36,8 @@ namespace DwarvenVillage.Factories
             var dwarf = new Dwarf()
             {
                 Id = _id++,
-                Type = getType()
+                Type = getType(),
+                Ores = new List<Ore>()
             };
 
             return dwarf;

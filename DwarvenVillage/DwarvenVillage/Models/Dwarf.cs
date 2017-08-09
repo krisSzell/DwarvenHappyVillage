@@ -11,6 +11,7 @@ namespace DwarvenVillage.Models
     {
         public int Id { get; set; }
         public DwarfType Type { get; set; }
+        public IList<Ore> Ores { get; set; }
 
         public override bool Equals(object obj)
         {
