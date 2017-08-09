@@ -36,10 +36,35 @@ namespace DwarvenVillage.Factories
             var dwarf = new Dwarf()
             {
                 Id = _id++,
-                Type = (DwarfType)_typeGenerator.Generate()
+                Type = getType()
             };
 
             return dwarf;
+        }
+
+        private DwarfType getType()
+        {
+            var probability = _typeGenerator.Generate();
+            DwarfType result;
+
+            if (probability <= 30)
+            {
+                result = DwarfType.Single;
+            }
+            else if (probability <= 60)
+            {
+                result = DwarfType.Parent;
+            }
+            else if (probability <= 90)
+            {
+                result = DwarfType.LazyBastard;
+            }
+            else
+            {
+                result = DwarfType.Saboteur;
+            }
+
+            return result;
         }
     }
 }

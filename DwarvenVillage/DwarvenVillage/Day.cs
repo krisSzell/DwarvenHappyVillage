@@ -34,22 +34,22 @@ namespace DwarvenVillage
             return new List<Dwarf>() { _dwarfFactory.CreateSingle() };
         }
 
-        public IList<Dwarf> Mine(IList<Dwarf> mineDwarves)
+        public IList<Dwarf> Mine(IList<Dwarf> mineDwarves, IMine mine)
+        {
+            return mine.Work(mineDwarves);
+        }
+
+        public IList<Dwarf> SellOres(IList<Dwarf> shopDwarves, IOreShop oreShop)
         {
             throw new NotImplementedException();
         }
 
-        public IList<Dwarf> BuyFood(IList<Dwarf> foodDwarves)
+        public IList<Dwarf> BuyFood(IList<Dwarf> foodDwarves, IFoodStore foodStore)
         {
             throw new NotImplementedException();
         }
 
         public IList<Dwarf> Feed(IList<Dwarf> hungryDwarves)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IList<Dwarf> SellOres(IList<Dwarf> shopDwarves)
         {
             throw new NotImplementedException();
         }

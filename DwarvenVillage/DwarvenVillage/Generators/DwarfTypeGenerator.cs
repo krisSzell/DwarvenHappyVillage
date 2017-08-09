@@ -12,7 +12,7 @@ namespace DwarvenVillage.Generators
 
         public int Generate()
         {
-            return rnd.Next(1, 5);
+            return rnd.Next(1, 101);
         }
     }
 }

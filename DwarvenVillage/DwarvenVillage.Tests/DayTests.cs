@@ -49,5 +49,11 @@ namespace DwarvenVillage.Tests
             // then
             Assert.IsTrue(result.Count == 1 || result.Count == 0);
         }
+
+        [Test]
+        public void ShouldCompleteDay1()
+        {
+
+        }
     }
 }

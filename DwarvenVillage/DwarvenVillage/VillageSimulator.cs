@@ -2,6 +2,7 @@
 using DwarvenVillage.Generators;
 using DwarvenVillage.Interfaces;
 using DwarvenVillage.Models;
+using DwarvenVillage.WorkUnits;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,12 @@ namespace DwarvenVillage
         private IDay _day;
         private IList<Dwarf> _dwarves;
         private int _dayNumber;
+        private IMine _mine;
 
         public void InitializeSimulation()
         {
             _dwarves = new List<Dwarf>();
+            _mine = new Mine();
             _dayNumber = 1;
             _day = new Day(new DwarfFactory(new DwarfTypeGenerator()), _dayNumber);
         }
@@ -26,7 +29,7 @@ namespace DwarvenVillage
         public void StartSimulation()
         {
             _dwarves = _day.BornDwarves(_dwarves);
-            _dwarves = _day.Mine(_dwarves);
+            _dwarves = _day.Mine(_dwarves, _mine);
         }
     }
 }

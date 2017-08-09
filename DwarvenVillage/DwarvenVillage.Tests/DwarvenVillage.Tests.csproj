@@ -55,6 +55,7 @@
     <Compile Include="DwarfFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DayTests.cs" />
+    <Compile Include="MineTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

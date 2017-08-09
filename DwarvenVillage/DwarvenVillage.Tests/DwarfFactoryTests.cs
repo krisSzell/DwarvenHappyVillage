@@ -32,7 +32,7 @@ namespace DwarvenVillage.Tests
         {
             // given
             var generatorMock = new Mock<IRandom>();
-            generatorMock.Setup(f => f.Generate()).Returns(0);
+            generatorMock.Setup(f => f.Generate()).Returns(31);
             var factory = new DwarfFactory(generatorMock.Object);
 
             var expected = new Dwarf() { Type = DwarfType.Parent };

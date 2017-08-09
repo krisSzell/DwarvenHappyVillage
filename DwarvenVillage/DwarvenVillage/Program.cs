@@ -10,6 +10,9 @@ namespace DwarvenVillage
     {
         static void Main(string[] args)
         {
+            var village = new VillageSimulator();
+            village.InitializeSimulation();
+            village.StartSimulation();
         }
     }
 }
