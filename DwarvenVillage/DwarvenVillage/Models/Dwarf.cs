@@ -12,6 +12,7 @@ namespace DwarvenVillage.Models
         public int Id { get; set; }
         public DwarfType Type { get; set; }
         public IList<Ore> Ores { get; set; }
+        private int _numberOfDigs;
 
         public override bool Equals(object obj)
         {
@@ -28,6 +29,16 @@ namespace DwarvenVillage.Models
         public bool Explodes()
         {
             return Type == DwarfType.Saboteur ? true : false;
+        }
+
+        public void SetNumberOfDigs(int number)
+        {
+            _numberOfDigs = number;
+        }
+
+        public int GetNumberOfDigs()
+        {
+            return _numberOfDigs;
         }
     }
 }

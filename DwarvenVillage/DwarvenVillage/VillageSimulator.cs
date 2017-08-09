@@ -27,7 +27,7 @@ namespace DwarvenVillage
                 new Shaft()
             };
             _dwarves = new List<IDwarf>();
-            _mine = new Mine(shafts);
+            _mine = new Mine(shafts, new NumberOfDigsGenerator());
             _oreShop = new OreShop();
             _dayNumber = 1;
             _day = new Day(new DwarfFactory(new DwarfTypeGenerator()), _dayNumber);

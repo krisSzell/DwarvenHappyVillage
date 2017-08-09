@@ -47,6 +47,7 @@
     <Compile Include="Factories\OreFactory.cs" />
     <Compile Include="Generators\DwarfTypeGenerator.cs" />
     <Compile Include="Generators\IRandom.cs" />
+    <Compile Include="Generators\NumberOfDigsGenerator.cs" />
     <Compile Include="Generators\OreTypeGenerator.cs" />
     <Compile Include="Interfaces\IDay.cs" />
     <Compile Include="Interfaces\IDwarf.cs" />

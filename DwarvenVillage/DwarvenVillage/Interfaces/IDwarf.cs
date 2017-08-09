@@ -9,5 +9,8 @@ namespace DwarvenVillage.Interfaces
     public interface IDwarf
     {
         bool Explodes();
+        bool Equals(object obj);
+        void SetNumberOfDigs(int number);
+        int GetNumberOfDigs();
     }
 }
