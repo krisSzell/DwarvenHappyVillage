@@ -24,7 +24,7 @@ namespace DwarvenVillage
             _dayNumber = dayNumber;
         }
 
-        public IList<IDwarf> BornDwarves(IList<IDwarf> villageDwarves)
+        public List<IDwarf> BornDwarves(List<IDwarf> villageDwarves)
         {
             if (_dayNumber == 1)
             {
@@ -34,22 +34,22 @@ namespace DwarvenVillage
             return new List<IDwarf>() { _dwarfFactory.CreateSingle() };
         }
 
-        public IList<IDwarf> Mine(IList<IDwarf> mineDwarves, IMine mine)
+        public List<IDwarf> Mine(List<IDwarf> mineDwarves, IMine mine)
         {
             return mine.Work(mineDwarves);
         }
 
-        public IList<IDwarf> SellOres(IList<IDwarf> shopDwarves, IOreShop oreShop)
+        public List<IDwarf> SellOres(List<IDwarf> shopDwarves, IOreShop oreShop)
         {
             throw new NotImplementedException();
         }
 
-        public IList<IDwarf> BuyFood(IList<IDwarf> foodDwarves, IFoodStore foodStore)
+        public List<IDwarf> BuyFood(List<IDwarf> foodDwarves, IFoodStore foodStore)
         {
             throw new NotImplementedException();
         }
 
-        public IList<IDwarf> Feed(IList<IDwarf> hungryDwarves)
+        public List<IDwarf> Feed(List<IDwarf> hungryDwarves)
         {
             throw new NotImplementedException();
         }

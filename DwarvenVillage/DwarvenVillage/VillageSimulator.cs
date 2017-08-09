@@ -14,7 +14,7 @@ namespace DwarvenVillage
     public class VillageSimulator : IVillageSimulator
     {
         private IDay _day;
-        private IList<IDwarf> _dwarves;
+        private List<IDwarf> _dwarves;
         private int _dayNumber;
         private IMine _mine;
         private IOreShop _oreShop;

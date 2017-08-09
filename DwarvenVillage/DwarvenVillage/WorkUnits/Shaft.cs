@@ -1,4 +1,5 @@
 ﻿using DwarvenVillage.Interfaces;
+using DwarvenVillage.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,29 +10,29 @@ namespace DwarvenVillage.WorkUnits
 {
     public class Shaft : IShaft
     {
-        private int _freeSpots = 5;
-        private bool _operating = true;
+        private int _spotsLeft = 5;
+        public bool IsOccupied { get; set; }
+        public bool IsOperating { get; set; }
 
-        public IList<IDwarf> Dig(IList<IDwarf> diggingDwarves)
+        public List<IDwarf> Dig(List<IDwarf> diggingDwarves)
         {
-            var dwarvesToReturn = new List<IDwarf>();
-
+            IsOccupied = true;
             foreach (var dwarf in diggingDwarves)
             {
-
+                //if (dwarf != null)
+                //{
+                    dwarf.Ores.Add(OreType.Mithril);
+                    dwarf.NumberOfDigs--;
+                    Console.WriteLine($"{dwarf.Id} dig nothing (for now)");
+                //}
             }
 
             return diggingDwarves;
         }
 
-        public int FreeSpots()
+        public int SpotsLeft()
         {
-            return _freeSpots;
-        }
-
-        public bool IsOperating()
-        {
-            return _operating;
+            return _spotsLeft;
         }
     }
 }

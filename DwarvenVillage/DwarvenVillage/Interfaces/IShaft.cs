@@ -4,7 +4,10 @@ namespace DwarvenVillage.Interfaces
 {
     public interface IShaft
     {
-        IList<IDwarf> Dig(IList<IDwarf> diggingDwarves);
-        int FreeSpots();
+        bool IsOccupied { get; set; }
+        bool IsOperating { get; set; }
+
+        List<IDwarf> Dig(List<IDwarf> diggingDwarves);
+        int SpotsLeft();
     }
 }

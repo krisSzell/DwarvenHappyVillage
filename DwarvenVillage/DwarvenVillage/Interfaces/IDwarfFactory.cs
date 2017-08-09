@@ -9,7 +9,7 @@ namespace DwarvenVillage.Interfaces
 {
     public interface IDwarfFactory
     {
-        IList<IDwarf> Create10();
+        List<IDwarf> Create10();
         IDwarf CreateSingle();
     }
 }

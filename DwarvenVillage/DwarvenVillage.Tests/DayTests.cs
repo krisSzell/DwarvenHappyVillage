@@ -9,7 +9,7 @@ namespace DwarvenVillage.Tests
 {
     public class DayTests
     {
-        private IList<IDwarf> _tenDwarves;
+        private List<IDwarf> _tenDwarves;
 
         [SetUp]
         public void Init()
